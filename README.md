@@ -12,7 +12,7 @@ https://www.yuque.com/easy-team/egg-vue
 
 **采用 Egg + Vue 服务端渲染**
 
-![](https://github.com/easy-team/egg-vue-webpack-boilerplate/blob/master/docs/images/iblog.png?raw=true)
+![](./packages/egg-vue-webpack-boilerplate/docs/images/iblog.png?raw=true)
 
 - 博客首页
 - 文章列表
@@ -22,7 +22,7 @@ https://www.yuque.com/easy-team/egg-vue
 
 **采用 Egg + Vue + Vue-Router + Element 单页面服务端同构渲染**
 
-![](https://github.com/easy-team/egg-vue-webpack-boilerplate/blob/master/docs/images/admin.png?raw=true)
+![](./packages/egg-vue-webpack-boilerplate/docs/images/admin.png?raw=true)
 
 - Dashboard
 - Markdown
@@ -32,7 +32,7 @@ https://www.yuque.com/easy-team/egg-vue
 
 ### 常用功能
 
-常用 Example 实现见 [awesome](https://github.com/easy-team/egg-vue-webpack-boilerplate/tree/awesome) 分支代码。
+常用 Example 实现见 [awesome](./tree/awesome) 分支代码。
 
 - Sass/Less/Stylus 功能
 - Dynamic Component Load
@@ -41,14 +41,15 @@ https://www.yuque.com/easy-team/egg-vue
 
 ### 骨架模板
 
-- egg-vue-webpack-boilerplate： Egg + Vue 多种特性功能模板
-- egg-vue-webpack-mpa-boilerplate： Egg + Vue 多页渲染模板
-- egg-vue-webpack-spa-boilerplate： Egg + Vue + Vue-Router + Vuex 单页面服务端渲染模板
-- egg-vue-webpack-asset-boilerplate： Egg + Vue 前端 asset 渲染方案
-- egg-vue-webpack-html-boilerplate： Egg + Vue 静态 HTML 渲染方案
-- Egg + Vue + TypeScript 项目，请见项目 [egg-vue-typescript-boilerplate](https://github.com/easy-team/egg-vue-typescript-boilerplate) 和 [ves-admin](https://github.com/easy-team/ves-admin) 
+- [egg-vue-webpack-boilerplate](./packages/egg-vue-webpack-boilerplate) Egg + Vue 多种特性功能模板。
+- [egg-vue-webpack-mpa-boilerplate](./packages/egg-vue-webpack-mpa-boilerplate)  Egg + Vue 多页渲染模板。
+- [egg-vue-webpack-spa-boilerplate](./packages/egg-vue-webpack-spa-boilerplate) Egg + Vue + Vue-Router + Vuex 单页面服务端渲染模板。
+- [egg-vue-webpack-asset-boilerplate](./packages/egg-vue-webpack-asset-boilerplate) Egg + Vue 前端 asset 渲染方案。
+- [egg-vue-webpack-html-boilerplate](./packages/egg-vue-webpack-html-boilerplate) Egg + Vue 静态 HTML 渲染方案。
+- [egg-vue-typescript-boilerplate](https://github.com/easy-team/egg-vue-typescript-boilerplate) Egg + Vue + TypeScript 项目，请见项目。
+- [ves-admin](https://github.com/easy-team/ves-admin) Egg + Vue 上层框架解决方案。
 
-以上项目，你可以通过 [easywebpack-cli](https://github.com/easy-team/easywebpack-cli) 初始化
+以上项目，你可以通过 [easywebpack-cli](https://github.com/easy-team/easywebpack-cli) 初始化。
 
 ## 版本
 
@@ -85,8 +86,7 @@ https://www.yuque.com/easy-team/egg-vue
 
 - 支持服务端渲染(SSR)失败时，自动降级为前端渲染(CSR)模式
 
-- 提供 国际化 i18n 多语言支持方案
-
+- 提供国际化 i18n 多语言支持方案
 
 ## 插件
 
@@ -96,10 +96,9 @@ https://www.yuque.com/easy-team/egg-vue
 - [egg-webpack](https://github.com/easy-team/egg-webpack) ^4.x.x
 - [egg-webpack-vue](https://github.com/easy-team/egg-webpack-vue) ^2.x.x
 
-
 ## 使用
 
-#### 安装cli(非必需)
+### 安装cli(非必需)
 
 ```bash
 npm install @easy-team/easywebpack-cli -g
@@ -107,14 +106,14 @@ npm install @easy-team/easywebpack-cli -g
 
 `easywebpack-cli` 已内置 `devDependencies` 中, 无需安装。如果你需要在命令行使用 `easy` 命令, 可以单独全局安装。
 
-#### 安装依赖
+### 安装依赖
 
 ```bash
 npm install
 ```
 
 
-#### 本地开发
+### 本地开发
 
 > 启动构建细节请阅读：https://www.yuque.com/easy-team/egg-vue/build
 
@@ -124,27 +123,26 @@ npm run dev
 
 应用访问: http://127.0.0.1:7001
 
-![npm start启动](https://github.com/hubcarl/egg-vue-webpack-boilerplate/blob/master/docs/images/webpack-build.png)
+![npm start启动](./packages/egg-vue-webpack-boilerplate/docs/images/webpack-build.png)
 
 - 本地开发启动 Webpack 构建, 默认配置文件为项目根目录 `webpack.config.js` 文件。 SSR 需要配置两份 Webpack 配置，所以构建会同时启动两个 Webpack 构建服务。web 表示构建 JSBundle 给前端用，构建后文件目录 `public`, 默认端口 9000; node 表示构建 JSBundle 给前端用，构建后文件目录 `app/view`, 默认端口 9001.
 
 - 本地构建是 Webpack 内存构建，文件不落地磁盘，所以 `app/view` 和 `public` 在本地开发时，是看不到文件的。 只有发布模式(npm run build)才能在这两个目录中看到构建后的内容。
 
-
-#### 线上部署
+### 线上部署
 
 > 部署细节请阅读：https://www.yuque.com/easy-team/egg-vue/online
 
 - 首先在本地或者 ci 进行项目构建
 
 ```bash
-npm run build 
+npm run build
 ```
 
 - 上传源代码以及构建的相关文件到服务器，然后启动应用
 
 ```bash
-npm start 
+npm start
 ```
 
 #### 构建配置
@@ -165,102 +163,99 @@ exports.webpack = { // 默认是如下配置，可不配置
 - 运行 `npm run build` 可以进行 Webpack 项目构建
 - 通过 `easy print` 可以打印 Webpack 原生配置
 
-
-
 ## 项目结构
 
-    ├── app
-    │   ├── controller
-    │   │   ├── test
-    │   │   │   └── test.js
-    │   ├── extend
-    │   ├── lib
-    │   ├── middleware
-    │   ├── mocks
-    │   ├── proxy
-    │   ├── router.js
-    │   ├── view
-    │   │   ├── home
-    │   │   │     └── home.js                 // Webpack 服务器编译的jsbundle文件, 对应 app/web/page/home/home.vue
-    │   └── web                               // 前端工程目录
-    │       ├── asset                         // 存放公共js,css资源
-    │       ├── framework                     // 前端公共库和第三方库
-    │       │   ├── fastclick
-    │       │   │   └── fastclick.js
-    │       │   ├── sdk
-    │       │   │   ├── sdk.js
-    │       │   ├── storage
-    │       │   │   └── storage.js
-    │       │   └── vue                           // 与vue相关的公开代码
-    │       │       ├── app.js                    // 前后端调用入口, 默认引入componet/directive/filter
-    │       │       ├── component.js              // 组件入口, 可以增加component目录,类似下面的directive
-    │       │       ├── directive                 // directive 目录,存放各种directive组件
-    │       │       ├── directive.js              // directive引用入口
-    │       │       └── filter.js                 // filter引用入口
-    │       ├── page                              // 前端页面和webpack构建目录, 也就是webpack打包配置entryDir
-    │       │   ├── home                          // 每个页面遵循目录名, js文件名, scss文件名, vue文件名相同
-    │       │   │   ├── home.scss
-    │       │   │   ├── home.vue
-    │       │   │   ├── images                    // 页面自有图片,公共图片和css放到asset下面
-    │       │   │   │   └── icon_more.png
-    │       │   │   └── w-week                    // 页面自有组件,公共组件放到widget下面
-    │       │   │       ├── w-week.scss
-    │       │   │       └── w-week.vue
-    │       │   └── test                          // 每个页面遵循目录名, js文件名, scss文件名, vue文件名相同
-    │       │       └── test.vue
-    │       ├── store                             // 引入vuex 的基本规范, 可以分模块
-    │       │   ├── app
-    │       │   │   ├── actions.js
-    │       │   │   ├── getters.js
-    │       │   │   ├── index.js
-    │       │   │   ├── mutation-type.js
-    │       │   │   └── mutations.js
-    │       │   └── store.js
-    │       └── component                         // 公共业务组件, 比如loading, toast等, 遵循目录名, js文件名, scss文件名, vue文件名相同
-    │           ├── loading
-    │           │   ├── loading.scss
-    │           │   └── loading.vue
-    │           ├── test
-    │           │   ├── test.vue
-    │           │   └── test.scss
-    │           └── toast
-    │               ├── toast.scss
-    │               └── toast.vue
-    ├── build                                   //  webpack 自定义配置入口, 会与默认配置进行合并(看似这么多,其实这里只是占个位说明一下)
-    │   ├── base
-    │   │   └── index.js                        // 公共配置        
-    │   ├──  client                             // 客户端webpack编译配置
-    │   │   ├── dev.js
-    │   │   ├── prod.js
-    │   │   └── index.js
-    │   ├──  server                             // 服务端webpack编译配置
-    │   │    ├── dev.js
-    │   │    ├── prod.js
-    │   │    └── index.js
-    │   └── index.js
-    ├── config
-    │   ├── manifest.json                      // webpack 构建的资源依赖依赖表
-    │   ├── config.default.js
-    │   ├── config.local.js
-    │   ├── config.prod.js
-    │   ├── config.test.js
-    │   └── plugin.js
-    ├── doc
-    ├── index.js
-    ├── public                                 // webpack 编译的前端静态资源存入目录
-    │   ├── static
-    │   │   ├── css
-    │   │   │   ├── home
-    │   │   │   │   ├── home.07012d33.css
-    │   │   │   └── test
-    │   │   │       ├── test.4bbb32ce.css
-    │   │   ├── img
-    │   │   │   ├── change_top.4735c57.png
-    │   │   │   └── intro.0e66266.png
-    │   ├── test
-    │   │   └── test.js
-    │   └── vendor.js                         // 生成的公共打包库
-
+  ├── app
+  │   ├── controller
+  │   │   ├── test
+  │   │   │   └── test.js
+  │   ├── extend
+  │   ├── lib
+  │   ├── middleware
+  │   ├── mocks
+  │   ├── proxy
+  │   ├── router.js
+  │   ├── view
+  │   │   ├── home
+  │   │   │     └── home.js                 // Webpack 服务器编译的jsbundle文件, 对应 app/web/page/home/home.vue
+  │   └── web                               // 前端工程目录
+  │       ├── asset                         // 存放公共js,css资源
+  │       ├── framework                     // 前端公共库和第三方库
+  │       │   ├── fastclick
+  │       │   │   └── fastclick.js
+  │       │   ├── sdk
+  │       │   │   ├── sdk.js
+  │       │   ├── storage
+  │       │   │   └── storage.js
+  │       │   └── vue                           // 与vue相关的公开代码
+  │       │       ├── app.js                    // 前后端调用入口, 默认引入componet/directive/filter
+  │       │       ├── component.js              // 组件入口, 可以增加component目录,类似下面的directive
+  │       │       ├── directive                 // directive 目录,存放各种directive组件
+  │       │       ├── directive.js              // directive引用入口
+  │       │       └── filter.js                 // filter引用入口
+  │       ├── page                              // 前端页面和webpack构建目录, 也就是webpack打包配置entryDir
+  │       │   ├── home                          // 每个页面遵循目录名, js文件名, scss文件名, vue文件名相同
+  │       │   │   ├── home.scss
+  │       │   │   ├── home.vue
+  │       │   │   ├── images                    // 页面自有图片,公共图片和css放到asset下面
+  │       │   │   │   └── icon_more.png
+  │       │   │   └── w-week                    // 页面自有组件,公共组件放到widget下面
+  │       │   │       ├── w-week.scss
+  │       │   │       └── w-week.vue
+  │       │   └── test                          // 每个页面遵循目录名, js文件名, scss文件名, vue文件名相同
+  │       │       └── test.vue
+  │       ├── store                             // 引入vuex 的基本规范, 可以分模块
+  │       │   ├── app
+  │       │   │   ├── actions.js
+  │       │   │   ├── getters.js
+  │       │   │   ├── index.js
+  │       │   │   ├── mutation-type.js
+  │       │   │   └── mutations.js
+  │       │   └── store.js
+  │       └── component                         // 公共业务组件, 比如loading, toast等, 遵循目录名, js文件名, scss文件名, vue文件名相同
+  │           ├── loading
+  │           │   ├── loading.scss
+  │           │   └── loading.vue
+  │           ├── test
+  │           │   ├── test.vue
+  │           │   └── test.scss
+  │           └── toast
+  │               ├── toast.scss
+  │               └── toast.vue
+  ├── build                                   //  webpack 自定义配置入口, 会与默认配置进行合并(看似这么多,其实这里只是占个位说明一下)
+  │   ├── base
+  │   │   └── index.js                        // 公共配置        
+  │   ├──  client                             // 客户端webpack编译配置
+  │   │   ├── dev.js
+  │   │   ├── prod.js
+  │   │   └── index.js
+  │   ├──  server                             // 服务端webpack编译配置
+  │   │    ├── dev.js
+  │   │    ├── prod.js
+  │   │    └── index.js
+  │   └── index.js
+  ├── config
+  │   ├── manifest.json                      // webpack 构建的资源依赖依赖表
+  │   ├── config.default.js
+  │   ├── config.local.js
+  │   ├── config.prod.js
+  │   ├── config.test.js
+  │   └── plugin.js
+  ├── doc
+  ├── index.js
+  ├── public                                 // webpack 编译的前端静态资源存入目录
+  │   ├── static
+  │   │   ├── css
+  │   │   │   ├── home
+  │   │   │   │   ├── home.07012d33.css
+  │   │   │   └── test
+  │   │   │       ├── test.4bbb32ce.css
+  │   │   ├── img
+  │   │   │   ├── change_top.4735c57.png
+  │   │   │   └── intro.0e66266.png
+  │   ├── test
+  │   │   └── test.js
+  │   └── vendor.js                         // 生成的公共打包库
 
 ## 功能实现
 
@@ -339,7 +334,6 @@ app.get('/client', app.controller.home.home.client);
 - 直接有easywebpack构建出静态HTML文件, 请见 `webpack.config.js` 配置和 `app/web/page/html`代码实现
 
 - 通过 `egg-static` 静态文件访问HTML文件
-
 
 ### 单页面服务器渲染同构实现
 
@@ -425,7 +419,6 @@ exports.index = function* (ctx) {
 
 > 功能性需求或者Bug问题, 欢迎大家 PR 完善, 如果你需要了解更多信息，请加 QQ 群: 433207205 (备注：easyjs)
 
-
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -453,7 +446,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
-
 
 ## License
 
